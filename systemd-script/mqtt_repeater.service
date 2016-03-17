@@ -1,0 +1,21 @@
+#systemd startup script
+##Put this here: /etc/systemd/system/mqtt_repeater.service
+# to start:
+# systemctl daemon-reload
+# systemctl start mqtt_repeater
+# To enable on boot:
+# systemctl enable mqtt_repeater
+[Unit]
+Description=MQTT Repeater daemon
+After=network.target rc-local.service
+
+[Service]
+ExecStart=/var/tmp/mqtt_repeater.py
+KillMode=process
+Restart=on-failure
+RestartSec=30s
+#Who should we run the daemon as?
+User=myusername
+
+[Install]
+WantedBy=multi-user.target

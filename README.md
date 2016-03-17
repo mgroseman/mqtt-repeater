@@ -22,10 +22,10 @@ epeat incoming messages<br>
 
 This has been tested with the 'mosquitto' open-source MQTT broker.
 
-Installation:
-NOTE:  This uses a branch of Adafruit IO's MQTT library, which has not been pushed upstream yet.  I'm waiting for another commit to be accepted by another contributor first.
-You can use my tree here:
- https://github.com/mgroseman/io-client-python/tree/repeater
+Installation:<br>
+NOTE:  This uses a branch of Adafruit IO's MQTT library, which has not been pushed upstream yet.  I'm waiting for another commit to be accepted by another contributor first.<br>
+You can use my tree here:<br>
+ https://github.com/mgroseman/io-client-python/tree/repeater<br>
  Branch: repeater
 
 Known Issues:<br>

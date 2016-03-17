@@ -22,6 +22,12 @@ epeat incoming messages<br>
 
 This has been tested with the 'mosquitto' open-source MQTT broker.
 
+Installation:
+NOTE:  This uses a branch of Adafruit IO's MQTT library, which has not been pushed upstream yet.  I'm waiting for another commit to be accepted by another contributor first.
+You can use my tree here:
+ https://github.com/mgroseman/io-client-python/tree/repeater
+ Branch: repeater
+
 Known Issues:<br>
    - For some reason Adafruit doesn't always connect for me, and doesn't generate an error or even complete the interna
 l paho-MQTT function.<br>

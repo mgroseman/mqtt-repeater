@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 #This needs to be fully commented and have a Usage message
 #Takes two args:   1) SOURCE label  2) topic
 # eg.   mqtt_db_query.py MQTT_1 /home/sensor/temp
@@ -8,7 +8,7 @@
 
 import sqlite3
 import sys
-SQLDB='/var/tmp/mqtt_repeater.db'
+SQLDB='db/mqtt_repeater.db'
 conn = sqlite3.connect(SQLDB)
 
 db = conn.cursor()

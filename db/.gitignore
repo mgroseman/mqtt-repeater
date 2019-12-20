@@ -1,0 +1,5 @@
+# Ignore everything in this directory, since it will be your own database
+*
+
+# Except this file
+!.gitignore

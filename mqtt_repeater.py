@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # Script to setup a MQTT repeater system.
 # Copyright (c) 2016 - mgroseman - Mike Roseman
 # MIT License

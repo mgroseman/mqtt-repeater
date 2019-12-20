@@ -37,8 +37,8 @@ import sqlite3
 from Adafruit_IO import MQTTClient
 
 #Global variables
-cfgfile='/var/tmp/mqtt_repeater.cfg'   # File that contains settings and rules on what to duplicate
-LOGFILE='/var/tmp/mqtt_repeater.log'   # File to send standard output.  Look at logging.basicConfig line below if you don't want to output to a file.
+cfgfile='etc/mqtt_repeater.cfg'   # File that contains settings and rules on what to duplicate
+LOGFILE='logs/mqtt_repeater.log'   # File to send standard output.  Look at logging.basicConfig line below if you don't want to output to a file.
 
 settings_dict=dict()
 #Basic structure of this nested dictionary looks like:
@@ -58,15 +58,16 @@ settings_defaults_dict = {
 logger = logging.getLogger('mqtt_repeater')  #label when logging
 
 #logging level.  Use one of these:
+#Maybe READ level from command line (with a default to WARNING)
 #Not to a file:
 #logging.basicConfig(format='%(asctime)s:%(name)s:%(process)s:%(levelname)s:%(message)s', level=logging.INFO)
 #logging.basicConfig(format='%(asctime)s:%(name)s:%(process)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 #or to a file:
 #logging.basicConfig(filename='myapp.log', format='%(asctime)s:%(name)s:%(process)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 #INFO Shows every received message and way it is handled:
-logging.basicConfig(filename=LOGFILE, format='%(asctime)s:%(name)s:%(process)s:%(levelname)s:%(message)s', level=logging.INFO)
+#logging.basicConfig(filename=LOGFILE, format='%(asctime)s:%(name)s:%(process)s:%(levelname)s:%(message)s', level=logging.INFO)
 #WARNING only shows warnings and above 
-#logging.basicConfig(filename=LOGFILE, format='%(asctime)s:%(name)s:%(process)s:%(levelname)s:%(message)s', level=logging.WARNING)
+logging.basicConfig(filename=LOGFILE, format='%(asctime)s:%(name)s:%(process)s:%(levelname)s:%(message)s', level=logging.WARNING)
 
 #Read configuration file and store values in nested dictionaries
 def read_cfgfile(filename):

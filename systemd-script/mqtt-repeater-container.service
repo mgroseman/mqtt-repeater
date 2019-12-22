@@ -1,0 +1,11 @@
+[Unit]
+Description=mqtt-repeater container
+
+[Service]
+Restart=always
+#If you changed container name or have multiple instances, change here:
+ExecStart=/usr/bin/podman start -a mqtt-repeater-1
+ExecStop=/usr/bin/podman stop -t 2 mqtt-repeater-1
+
+[Install]
+WantedBy=local.target

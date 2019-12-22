@@ -52,11 +52,11 @@ set MQTT_1 QOS 2
 
 # File output.  (Can only be a destination)
 set FILE1 TOPIC_FMT file
-set FILE1 FILENAME /var/tmp/mqtt_logfile.csv
+set FILE1 FILENAME logs/mqtt_logfile.csv
 
 # SQLite DB output (Just saving current value, not historical values)  (Can only be destination)
 set DB1 TOPIC_FMT sqlite
-set DB1 FILENAME /var/tmp/mqtt_repeater.db
+set DB1 FILENAME db/mqtt_repeater.db
 
 
 #################################

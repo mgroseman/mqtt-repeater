@@ -8,15 +8,15 @@ Running as root containers using sudo.
 
 5)  debugging commands if necessary:
 
-    tail logs/mqtt_repeater.log
-    sudo podman ps 
-    sudo podman ps --all
-    sudo podman logs <instancename>
-    sudo podman exec -it <instancename> sh
+    tail logs/mqtt_repeater.log <br>
+    sudo podman ps <br>
+    sudo podman ps --all <br>
+    sudo podman logs \<instancename>  <br>
+    sudo podman exec -it \<instancename> sh  <br>
 
 6) Autostart:  See instructions in systemd-script/mqtt-repeater-container.service 
 
 Query Command examples to read from database: <br>
-    sudo podman exec -it <instancename> util/mqtt_db_dump.py
-    sudo podman exec -it <instancename> util/mqtt_db_query.py MQTT_1 /farm/sensors/garage/temp
+    sudo podman exec -it \<instancename> util/mqtt_db_dump.py <br>
+    sudo podman exec -it \<instancename> util/mqtt_db_query.py MQTT_1 /farm/sensors/garage/temp <br>
 

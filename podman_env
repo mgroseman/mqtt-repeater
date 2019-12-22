@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#Change INSTANCE_NAME per unique running container
+INSTANCE_NAME=mqtt-repeater-1
+VERSION=v1.0
+INSTALL_PATH=`pwd`
+
+#Podman is being a slight pain with routing between multiple root containers, so hardcoding Mosquitto container IP
+RUN_OPTIONS="--add-host=mqtt-broker1:10.88.0.26"
+

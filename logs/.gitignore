@@ -1,0 +1,6 @@
+# Ignore everything in this directory, since it will be your own logs
+*
+
+# Except this file
+!.gitignore
+

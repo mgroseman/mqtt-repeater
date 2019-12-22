@@ -1,11 +1,25 @@
+#systemd startup script
+#
+#1) Modify container name if you changed
+#2) Put this here: /etc/systemd/system/mqtt-repeater-container.service
+#3) systemctl daemon-reload
+#
+# to start:
+# systemctl start mqtt-repeater-container
+# To enable on boot:
+# systemctl enable mqtt-repeater-container
+#
+
 [Unit]
 Description=mqtt-repeater container
+After=network.target
 
 [Service]
-Restart=always
 #If you changed container name or have multiple instances, change here:
 ExecStart=/usr/bin/podman start -a mqtt-repeater-1
 ExecStop=/usr/bin/podman stop -t 2 mqtt-repeater-1
+Restart=on-failure
+RestartSec=30s
 
 [Install]
 WantedBy=local.target

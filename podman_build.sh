@@ -10,5 +10,5 @@ podman stop ${INSTANCE_NAME}
 podman rmi mqtt-repeater-${VERSION}
 
 #Build image
-podman build --tag mqtt-repeater-${VERSION} .
+podman build --no-cache --tag mqtt-repeater-${VERSION} .
 

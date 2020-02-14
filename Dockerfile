@@ -8,6 +8,11 @@ RUN git clone --single-branch --branch repeater https://github.com/mgroseman/io-
 ### Final image
 FROM python:2.7-alpine
 
+#Set to your timezone
+RUN apk add --no-cache tzdata
+ENV TZ=America/New_York
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 COPY --from=builder /app /app
 RUN cd /app/io-client-python && python setup.py install
 COPY . /app/mqtt-repeater
